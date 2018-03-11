@@ -3,12 +3,12 @@ import { createAnecdote } from './../reducers/anecdoteReducer'
 import { connect } from 'react-redux'
 
 class AnecdoteForm extends React.Component {
-  handleSubmit = (e) => {
+  
+  handleSubmit = async (e) => {
     e.preventDefault()
     const content = e.target.anecdote.value
-    this.props.createAnecdote(content)
-  
     e.target.anecdote.value = ''
+    this.props.createAnecdote(content)
   }
    render() {
      return (

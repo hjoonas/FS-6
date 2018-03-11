@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 class AnecdoteList extends React.Component {
 
   render() {
-    const vote = (anecdote) => {
+    const vote = async (anecdote) => {
       this.props.voteAnecdote(anecdote)
       let timer = setTimeout(() => { this.props.timerNotification() }, 5000)
       this.props.notificationChange(anecdote.content, timer)
